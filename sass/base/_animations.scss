@@ -1,0 +1,52 @@
+/* 
+**
+7.10: css: @keyframe & animation property
+**
+*/
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-100%);
+        transform: rotate(-180deg);
+    }
+    70% {
+        opacity: 0.5;
+        transform: translate(1.5rem);
+        transform: rotate(60deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(100%);
+    }
+    70% {
+        opacity: 0.5;
+        transform: translate(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* btm appear animation */
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    30% {
+        opacity: 0.2;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

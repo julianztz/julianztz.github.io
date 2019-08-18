@@ -1,0 +1,171 @@
+.card {
+    // functionality
+    perspective: 150rem; // magic1 !!!!!!!!!!!!3d effect!!!!!!!!!!!
+    -moz-perspectice: 150rem;
+    position: relative;
+    height: 35rem;
+
+    &__c {
+//        background-color: orangered;
+        //        color: white;
+        //        font-size: 2rem;
+        height: 45rem;
+        transition: all .8s ease; // smoothier
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden; // magic2 !!!!!!!!!!!here is the MAGIC!!!!!!!!!!!!
+
+        overflow: hidden; // make img overflow: for the radius effect
+        border-radius: 5px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            background-color: green;
+            transform: rotateY(180deg);
+
+            &--1 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-secondary-light, 0.8),
+                        rgba($color-secondary-dark, 0.8)),
+            }
+
+            &--2 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-primary-light, 0.8),
+                        rgba($color-primary-dark, 0.8)),
+            }
+
+            &--3 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-tertiary-light, 0.8),
+                        rgba($color-tertiary-dark, 0.8)),
+            }
+        }
+    }
+
+
+
+    &:hover &__c--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__c--back {
+        transform: rotateY(0deg);
+    }
+
+    //  8.15  front card style
+    &__pic {
+        background-size: cover;
+        height: 20rem;
+        background-blend-mode: color;                                 // blur mask effect
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-secondary-light, 0.8),
+                    rgba($color-secondary-dark, 0.8)), url(../../img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-primary-light, 0.8),
+                    rgba($color-primary-dark, 0.8)), url(../../img/nat-6.jpg);
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-tertiary-light, 0.8),
+                    rgba($color-tertiary-dark, 0.8)), url(../../img/nat-7.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 10rem;
+        right: 2rem;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone; // apply decoration effect to all characters 
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-secondary-light, 0.8),
+                    rgba($color-secondary-dark, 0.8)),
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-primary-light, 0.8),
+                    rgba($color-primary-dark, 0.8)),
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-tertiary-light, 0.8),
+                    rgba($color-tertiary-dark, 0.8)),
+        }
+    }
+
+    &__contents {
+
+        // padding: 3rem;
+        ul {
+            list-style: none;
+            margin: 1rem auto;
+            width: 80%;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light;
+                }
+
+            }
+        }
+    }
+
+    //  8.16  back card style
+    &__backcontent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__backcombo {
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 4rem;
+
+        &-price {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        &-value {
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+}

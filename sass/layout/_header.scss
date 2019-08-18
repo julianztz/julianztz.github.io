@@ -1,0 +1,45 @@
+/* 
+* 8.11 scss: encapsulate
+*/
+.header{
+    height: 90vh;                 
+    /*95% of the view height*/
+//    max-width: $grid-width;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)), 
+/*        url(../img/hero.jpg);*/
+        url(../img/bg.png);
+    background-size: cover;       
+    /*  always fit the view window  */
+    background-position: top;
+    /*    top of the back img stay still  */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+    /*  URL: css clip path maker  */
+    
+    position: relative;
+    &__logo-box{
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        width: 80rem;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*  shift to left and top by 50% of the element itself  */
+        text-align: center;
+        /*  set the text (and inline element) to be at center */
+    }
+    &__logo:hover {
+        animation: moveInLeft 1s ease-out;
+    }    
+}

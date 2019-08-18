@@ -1,0 +1,24 @@
+//base margin/padding/box-sizing/UNIT: font-size & rem
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /*border and padding is no longer added to the total width or height of the box*/
+    box-sizing: inherit;        /*****inheritance*****/  
+    /*  box-sizing was not inherited; now it is by forcing  */
+}
+
+html {
+/*    font-size: 10px;        */
+    /*  now 10px=1rem (root font size)  */
+    font-size: 62.5%;
+    /*  default: 16px
+        we want 10px(relatively), we use 10/16 here*/
+}
+
+body {
+    box-sizing: border-box;  
+}
+

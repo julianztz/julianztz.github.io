@@ -1,0 +1,43 @@
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        position: absolute;
+        outline-offset: 2rem;
+        z-index: 5;
+        transition: all .2s;    //animation effect, slowly bigger and slowly smaller
+
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem;
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 10;
+        }
+    }
+
+    // when hover composition, select the composition photo that is not hovered
+    // composition:hover composition__photo:not(hover){}
+    &:hover &__photo:not(:hover) {
+//        width: 50%;
+        transform: scale(95%);
+    }
+    
+}

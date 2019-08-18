@@ -1,0 +1,44 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/bg-video";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/form";
+@import "components/stories";
+@import "components/tourcards";
+
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/home";
+
+
+/* 
+**
+*7.17: css level: importance > specificity > source order
+*                 specificity: inline > ID > class > element
+*      css value processing
+*      css inheritance
+*
+*     !!change every px to rem!!
+**    
+*/
+
+/**
+*
+7.28: SCSS
+
+8.12: CSS seperately capsulation
+*/
+
+
+

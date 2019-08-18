@@ -1,0 +1,44 @@
+.row {
+    max-width: $grid-width;        // if the screen is smaller, max-width fills the 100% of current screen
+//    background-color: #eee;
+    margin: 0 auto;            // center block element within another block: top/bottom:0  left/right: auto
+//    margin-bottom: $gutter-vertical;
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+    
+    @include clearfix;
+//    selector: all class attributes ^:start with col-
+    [class^="col"] {
+//        background-color: orangered;
+        float: left;
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+    
+    .col11{
+        width: calc((100% - #{$gutter-horizontal})/2);
+        
+    }
+    .col12{
+        width: calc((100% - 2*#{$gutter-horizontal})/3); 
+    }   
+    
+    .col22{
+         width: calc(2*((100% - 2*#{$gutter-horizontal})/3) + #{$gutter-horizontal});
+    }    
+    
+    .col13{
+        width: calc((100% - 2*#{$gutter-horizontal})/3);
+    }    
+    
+    .col14{
+        width: calc((100% - 3*#{$gutter-horizontal})/4);
+    }    
+    
+    .col15{
+        width: calc((100% - 2*#{$gutter-horizontal})/3);
+    }
+    
+}
